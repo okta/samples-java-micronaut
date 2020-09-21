@@ -1,0 +1,13 @@
+micronaut:
+  security:
+    authentication: idtoken 
+    oauth2:
+      clients:
+        okta:
+          client-id: '${OKTA_OAUTH2_CLIENTID}'
+          client-secret: '${OKTA_OAUTH2_CLIENTSECRET}'
+          openid:
+            issuer: '${OKTA_OAUTH2_ISSUER}'
+    endpoints:
+      logout:
+        get-allowed: true 

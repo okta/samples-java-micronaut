@@ -1,0 +1,19 @@
+build
+npm-debug.log
+travis_phantomjs
+.DS_Store
+.vscode
+
+public
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Maven
+.classpath
+.project
+.settings
+target
