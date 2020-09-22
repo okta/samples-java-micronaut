@@ -45,21 +45,11 @@
         <p>If you're viewing this page then you have successfully configured and started this example server.</p>
         <p>When you click the login button below, you will be redirected to the login page on your Okta org. After you authenticate, you will be returned to this application.</p>
 
-        <button id="login-btn" class="btn btn-success">Login</button>
-        <script type="text/javascript">
-            document.getElementById("login-btn").onclick = function () {
-                location.href = "/oauth/login/okta";
-            };
-        </script>
+        <a class="btn btn-primary" href="/oauth/login/okta" role="button">Login</a>
     </div>
 
     <div th:if="${security}">
-        <button id="logout-btn" class="btn btn-danger">Logout</button>
-        <script type="text/javascript">
-            document.getElementById("logout-btn").onclick = function () {
-                location.href = "/oauth/logout";
-            };
-        </script>
+        <a class="btn btn-danger" href="/oauth/logout" role="button">Logout</a>
     </div>
 </div>
 
