@@ -1,6 +1,6 @@
 # Micronaut OAuth Sample Applications for Okta
 
-This repository contains sample applications that show how to integrate various Okta use-cases into your Java application that uses the [Micronaut][Micronaut Framework] framework.
+This repository contains sample applications that show how to integrate various Okta use-cases into your Java application using [Micronaut][Micronaut Framework] framework.
 
 | Sample | Description | Use-Case |
 |--------|-------------|----------|
