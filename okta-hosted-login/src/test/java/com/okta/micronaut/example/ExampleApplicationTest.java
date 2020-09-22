@@ -1,4 +1,4 @@
-package com.example;
+package com.okta.micronaut.example;
 
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.annotation.MicronautTest;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import javax.inject.Inject;
 
 @MicronautTest
-public class DemoTest {
+public class ExampleApplicationTest {
 
     @Inject
     EmbeddedApplication application;

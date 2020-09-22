@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Okta Micronaut Example</title>
+
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div th:if="${security}">
+    <div class="text container">
+       <p>Welcome home, <span th:text="${security.attributes.name}">Joe Coder</span>!</p>
+       <p>You have successfully authenticated against your Okta org, and have been redirected back to this application.</p>
+
+       <span><h1>User Profile</h1></span>
+
+       <table class="table table-striped table-bordered">
+          <thead>
+             <tr>
+                 <th>Key</th>
+                 <th>Value</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr th:each="item : ${security.attributes}">
+                 <td th:text="${item.key}">Key</td>
+                 <td th:id="${'claim-' + item.key}" th:text="${item.value}">Value</td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+</div>
+
+<div class="text container">
+    <div th:unless="${security}">
+        <p>Hello, anonymous!</p>
+        <p>If you're viewing this page then you have successfully configured and started this example server.</p>
+        <p>When you click the login button below, you will be redirected to the login page on your Okta org. After you authenticate, you will be returned to this application.</p>
+
+        <button id="login-btn" class="btn btn-success">Login</button>
+        <script type="text/javascript">
+            document.getElementById("login-btn").onclick = function () {
+                location.href = "/oauth/login/okta";
+            };
+        </script>
+    </div>
+
+    <div th:if="${security}">
+        <button id="logout-btn" class="btn btn-danger">Logout</button>
+        <script type="text/javascript">
+            document.getElementById("logout-btn").onclick = function () {
+                location.href = "/oauth/logout";
+            };
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
