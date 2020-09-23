@@ -10,4 +10,4 @@ micronaut:
             issuer: '${OKTA_OAUTH2_ISSUER}'
     endpoints:
       logout:
-        get-allowed: true 
+        path: '/oauth/logout'
