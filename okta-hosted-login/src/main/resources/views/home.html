@@ -41,7 +41,7 @@
         <a class="btn btn-primary" href="/oauth/login/okta" role="button">Login</a>
     </div>
     <div th:if="${security}">
-        <form action="/oauth/logout" method="post">
+        <form action="/oauth/logout" method="post"> <!-- URL should match Okta's Logout redirect URI in App settings -->
             <button id="logout-button" type="submit" class="btn btn-danger">Logout</button>
         </form>
     </div>

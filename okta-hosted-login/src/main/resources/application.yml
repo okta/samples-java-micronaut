@@ -4,10 +4,10 @@ micronaut:
     oauth2:
       clients:
         okta:
-          client-id: '${OKTA_OAUTH2_CLIENTID}'
-          client-secret: '${OKTA_OAUTH2_CLIENTSECRET}'
+          client-id: '${OAUTH_CLIENT_ID}'
+          client-secret: '${OAUTH_CLIENT_SECRET}'
           openid:
-            issuer: '${OKTA_OAUTH2_ISSUER}'
+            issuer: '${OIDC_ISSUER_DOMAIN}/oauth2/${OIDC_ISSUER_AUTHSERVERID}'
     endpoints:
       logout:
-        path: '/oauth/logout'
+        path: '/oauth/logout' # should match Okta's Logout redirect URI in App settings

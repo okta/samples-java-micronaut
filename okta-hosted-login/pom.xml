@@ -25,17 +25,17 @@
   </parent>
 
   <groupId>com.example.okta</groupId>
-  <artifactId>okta-micronaut-oauth-code-flow-example</artifactId>
+  <artifactId>okta-hosted-login</artifactId>
   <packaging>jar</packaging>
 
   <name>Okta :: Samples :: Micronaut :: Auth Code Flow</name>
   <description>Okta OAuth 2.0 w/ Micronaut Example</description>
 
   <properties>
-    <jdk.version>1.8</jdk.version>
+    <java.version>11</java.version>
     <!-- If you are building with JDK 9 or higher, you can uncomment the lines below to set the release version -->
     <!-- <release.version>8</release.version> -->
-    <micronaut.version>2.0.2</micronaut.version>
+    <micronaut.version>2.1.0</micronaut.version>
     <exec.mainClass>com.okta.micronaut.example.ExampleApplication</exec.mainClass>
   </properties>
 
@@ -114,7 +114,6 @@
       <plugin>
         <groupId>io.micronaut.build</groupId>
         <artifactId>micronaut-maven-plugin</artifactId>
-        <version>1.0.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

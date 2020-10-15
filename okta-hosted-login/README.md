@@ -23,29 +23,21 @@ You need to gather the following information from the Okta Developer Console:
 
 - **Client ID** and **Client Secret** - These can be found on the "General" tab of the Web application that you created earlier in the Okta Developer Console.
 
-- **Issuer** - This is the URL of the authorization server that will perform authentication.  All Developer Accounts have a "default" authorization server.  The issuer is a combination of your Org URL (found in the upper right of the console home page) and `/oauth2/default`. For example, `https://dev-1234.oktapreview.com/oauth2/default`.
+- **Issuer** - This is the URL of the authorization server that will perform authentication.  All Developer Accounts have a "default" authorization server.  The issuer is a combination of your Org URL (found in the upper right of the console home page) and `/oauth2/default`. For example, `https://dev-1234.okta.com/oauth2/default`.
 
-Plug these values into the `mvn` commands used to start the application.
-
-```bash
-export OKTA_OAUTH2_ISSUER=https://{yourOktaDomain}/oauth2/default # e.g. https://dev-1234.oktapreview.com/oauth2/default
-export OKTA_OAUTH2_CLIENTID={clientId}
-export OKTA_OAUTH2_CLIENTSECRET={clientSecret}
-
-cd okta-hosted-login
-mvn clean mn:run
-```
-
-(or)
+Set the below environment variables from terminal and start the application.
 
 ```bash
-cd okta-hosted-login
-mvn -DOKTA_OAUTH2_ISSUER=https://{yourOktaDomain}/oauth2/default \
-    -DOKTA_OAUTH2_CLIENTID={clientId} \
-    -DOKTA_OAUTH2_CLIENTSECRET={clientSecret} clean mn:run
+export OIDC_ISSUER_DOMAIN=https://{yourOktaDomain}  # e.g. https://dev-123456.okta.com
+export OAUTH_CLIENT_ID={clientId}
+export OAUTH_CLIENT_SECRET={clientSecret}
+export OIDC_ISSUER_AUTHSERVERID=default # e.g. default or custom Authorization Server id
+
+cd okta-hosted-login/
+mvn mn:run
 ```
 
-> **NOTE:** Putting secrets on the command line should ONLY be done for examples, do NOT do this in production. Instead, update the project's `application.yml`.
+**Note:** If you are on Windows command line, use `SET` instead of `export` above.
 
 Now, navigate to `http://localhost:8080` in your browser.
 
