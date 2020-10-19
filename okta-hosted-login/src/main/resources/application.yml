@@ -1,0 +1,13 @@
+micronaut:
+  security:
+    authentication: idtoken 
+    oauth2:
+      clients:
+        okta:
+          client-id: '${OAUTH_CLIENT_ID}'
+          client-secret: '${OAUTH_CLIENT_SECRET}'
+          openid:
+            issuer: '${OIDC_ISSUER_DOMAIN}/oauth2/${OIDC_ISSUER_AUTHSERVERID}'
+    endpoints:
+      logout:
+        path: '/oauth/logout' # should match Okta's Logout redirect URI in App settings
