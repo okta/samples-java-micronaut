@@ -21,7 +21,7 @@
   <parent>
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>2.0.2</version>
+    <version>3.9.2</version>
   </parent>
 
   <groupId>com.okta.examples</groupId>
