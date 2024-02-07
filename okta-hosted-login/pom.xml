@@ -83,6 +83,11 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf</artifactId>
+      <version>3.1.2.RELEASE</version>
+    </dependency>
+    <dependency>
       <groupId>io.micronaut.views</groupId>
       <artifactId>micronaut-views-thymeleaf</artifactId>
       <scope>compile</scope>
