@@ -55,4 +55,4 @@ workflows:
     jobs:
       - reversing-labs:
           context:
-            - okta-dcp          
+            - static-analysis          
